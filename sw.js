@@ -1,6 +1,6 @@
 /* Infinity service worker: the site works offline after a visit and installs as an app.
    Pages: network first (always fresh), saved copy when offline. Design, scripts, tools and libraries: saved copy first. */
-var V = '2026-11-02.13-1664cdc4', PAGES = 'inf-pages-' + V, FILES = 'inf-files-' + V;
+var V = '2026-11-02.14-cffd0e71', PAGES = 'inf-pages-' + V, FILES = 'inf-files-' + V;
 var PRE = ['/', '/search', '/404.html', '/manifest.webmanifest', '/icons/favicon-192.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(PAGES).then(function (c) { return c.addAll(PRE); }).then(function () { return self.skipWaiting(); }));
