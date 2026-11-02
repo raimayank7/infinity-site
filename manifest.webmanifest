@@ -1,0 +1,104 @@
+{
+ "name": "Infinity by GroupChatOn",
+ "short_name": "Infinity",
+ "id": "/",
+ "description": "609 free tools that run on your device: PDF, image, video, text, developer tools, calculators, invoices and a money manager. Works offline.",
+ "start_url": "/?source=pwa",
+ "scope": "/",
+ "display": "standalone",
+ "display_override": [
+  "standalone",
+  "minimal-ui"
+ ],
+ "launch_handler": {
+  "client_mode": "focus-existing"
+ },
+ "orientation": "any",
+ "background_color": "#05060F",
+ "theme_color": "#05060F",
+ "lang": "en",
+ "dir": "ltr",
+ "categories": [
+  "utilities",
+  "productivity",
+  "business"
+ ],
+ "icons": [
+  {
+   "src": "/icons/favicon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/favicon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/app-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "screenshots": [
+  {
+   "src": "/icons/app-shot-phone.png",
+   "sizes": "1080x1920",
+   "type": "image/png",
+   "form_factor": "narrow",
+   "label": "Infinity on a phone"
+  },
+  {
+   "src": "/icons/app-shot-wide.png",
+   "sizes": "1600x1000",
+   "type": "image/png",
+   "form_factor": "wide",
+   "label": "Infinity on a computer"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Image Compressor",
+   "url": "/image-compressor/",
+   "icons": [
+    {
+     "src": "/icons/favicon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Merge PDF",
+   "url": "/merge-pdf/",
+   "icons": [
+    {
+     "src": "/icons/favicon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Invoice Generator",
+   "url": "/invoice-generator/",
+   "icons": [
+    {
+     "src": "/icons/favicon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Money Manager",
+   "url": "/money-manager/",
+   "icons": [
+    {
+     "src": "/icons/favicon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ]
+}
