@@ -24,7 +24,7 @@
   d.className+=' js';d.setAttribute('data-theme',t);})();</script>
 <style>html{background:#05060F;color:#E8EAFF}html[data-theme='light']{background:#F5F6FF;color:#141633}
 body{margin:0;overflow-x:hidden}img{max-width:100%;height:auto}
-.is-list .gco-tool-mount:empty,.is-error .gco-tool-mount:empty{min-height:100vh!important}
+.is-list .gco-tool-mount:not(:has(.thub)),.is-error .gco-tool-mount:not(:has(.thub)){min-height:100vh}
 .gco-tool-mount:empty,.gco-tool-mount>noscript:only-child{display:block;min-height:min(620px,75vh);border-radius:18px;
 background:linear-gradient(100deg,rgba(139,124,255,.06) 30%,rgba(139,124,255,.18) 50%,rgba(139,124,255,.06) 70%);background-size:300% 100%;animation:gcoSk 1.3s ease-in-out infinite}
 html.js .seo-list{display:none}
@@ -82,7 +82,7 @@ html.js .seo-list{display:none}
 <h2>How to look up DNS records</h2>
 <ol><li>Type a domain name such as example.com (a full link works too).</li><li>Choose “All common records” or one record type, and Google or Cloudflare.</li><li>Press Look up and read the records, their values and TTL.</li></ol>
 <h2>Good to know</h2>
-<ul><li>NXDOMAIN means the name does not exist: check the spelling, or the domain may have expired.</li><li>For DKIM, look up selector._domainkey.yourdomain.com as TXT (your email provider tells you the selector).</li></ul>
+<ul><li>NXDOMAIN means the name does not exist: check the spelling, or the domain may have expired.</li><li>For DKIM, look up <code>selector._domainkey.<wbr>yourdomain.com</code> as TXT (your email provider tells you the selector).</li></ul>
 <h2>Questions</h2>
 <details><summary>Why do I see old records after changing my DNS?</summary><p>Resolvers keep answers for the TTL time shown. Wait that long, or compare Google and Cloudflare, which may refresh at different times.</p></details>
 <details><summary>What is sent, and to whom?</summary><p>Only the domain name you type, sent over an encrypted HTTPS connection to the public DNS service you pick: Google Public DNS (dns.google) or Cloudflare (1.1.1.1). We store nothing.</p></details>

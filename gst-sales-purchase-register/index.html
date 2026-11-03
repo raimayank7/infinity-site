@@ -24,7 +24,7 @@
   d.className+=' js';d.setAttribute('data-theme',t);})();</script>
 <style>html{background:#05060F;color:#E8EAFF}html[data-theme='light']{background:#F5F6FF;color:#141633}
 body{margin:0;overflow-x:hidden}img{max-width:100%;height:auto}
-.is-list .gco-tool-mount:empty,.is-error .gco-tool-mount:empty{min-height:100vh!important}
+.is-list .gco-tool-mount:not(:has(.thub)),.is-error .gco-tool-mount:not(:has(.thub)){min-height:100vh}
 .gco-tool-mount:empty,.gco-tool-mount>noscript:only-child{display:block;min-height:min(620px,75vh);border-radius:18px;
 background:linear-gradient(100deg,rgba(139,124,255,.06) 30%,rgba(139,124,255,.18) 50%,rgba(139,124,255,.06) 70%);background-size:300% 100%;animation:gcoSk 1.3s ease-in-out infinite}
 html.js .seo-list{display:none}
