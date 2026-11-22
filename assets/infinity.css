@@ -519,3 +519,22 @@ html[data-theme='light'] .brand-logo.is-dark,html:not([data-theme='light']) .bra
 @media (max-width:520px){.site-footer .brand-logo.ft-logo{height:36px}}
 .site-footer .foot-social{display:flex;flex-wrap:wrap;gap:0 16px;align-items:center;margin:10px 0 0;font-size:14px}.site-footer .foot-social a{display:inline-flex;align-items:center;min-height:44px}
 .site-footer .foot-social{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.site-footer .foot-social b{margin-right:4px}.site-footer .foot-social a.si{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;border:1px solid rgba(128,128,128,.45);color:inherit;text-decoration:none;background:transparent;transition:background .15s,color .15s,border-color .15s,transform .15s}.site-footer .foot-social a.si svg{width:20px;height:20px;fill:currentColor}.site-footer .foot-social a.si:hover,.site-footer .foot-social a.si:focus-visible{color:#fff;border-color:transparent;transform:translateY(-2px)}.site-footer .foot-social a.si.fb:hover,.site-footer .foot-social a.si.fb:focus-visible{background:#1877f2}.site-footer .foot-social a.si.x:hover,.site-footer .foot-social a.si.x:focus-visible{background:#111}.site-footer .foot-social a.si.yt:hover,.site-footer .foot-social a.si.yt:focus-visible{background:#f00}.site-footer .foot-social{margin:12px 0 0}
+/* Sponsored cards in Share's layout (owner 2026-11-22): a full-width strip, picture on the left, tag pill, bold title, text, button, small print */
+.pick{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:22px;row-gap:6px;align-items:center;width:100%;max-width:none;margin:28px 0;padding:16px;border:1px dashed var(--line-strong);border-radius:16px;background:var(--surface);text-align:left;animation:pick-in .35s both}
+.pick::before{position:static;grid-column:2;grid-row:1;justify-self:start;align-self:end;font:600 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:999px;padding:4px 8px}
+.pick>a:first-child,.pick>.pk-ic{grid-column:1;grid-row:1/span 5;align-self:center;line-height:0;max-width:45vw}
+.pick>a:first-child img,.pick img.pk-img{display:block;width:auto;height:150px;max-width:100%;max-height:none;margin:0;border-radius:12px;object-fit:cover}
+.pick .pk-ic{width:72px;height:72px;margin:0}
+.pick>.pk-title,.pick>.pk-line,.pick>.pk-btn,.pick>small{grid-column:2;justify-self:start}
+.pick .pk-title{font:800 1.05rem/1.3 var(--ui);text-align:left}
+.pick .pk-line{max-width:none;color:var(--ink-soft);text-align:left}
+.pick .pk-btn{margin-top:4px}
+.pick small{text-align:left}
+@keyframes pick-in{from{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.pick{animation:none}}
+@media (max-width:560px){.pick{grid-template-columns:minmax(0,1fr)}
+  .pick>a:first-child,.pick>.pk-ic{grid-column:1;grid-row:auto;order:-1;max-width:none}
+  .pick>a:first-child img,.pick img.pk-img{width:100%;height:auto}
+  .pick::before,.pick>.pk-title,.pick>.pk-line,.pick>.pk-btn,.pick>small{grid-column:1;grid-row:auto}
+  .pick>.pk-btn{justify-self:stretch;justify-content:center}}
+.thub-grid>.pick{grid-column:1/-1;margin:6px 0}.thub-body>.pick-break{margin:34px 0}
