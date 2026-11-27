@@ -538,3 +538,63 @@ html[data-theme='light'] .brand-logo.is-dark,html:not([data-theme='light']) .bra
   .pick::before,.pick>.pk-title,.pick>.pk-line,.pick>.pk-btn,.pick>small{grid-column:1;grid-row:auto}
   .pick>.pk-btn{justify-self:stretch;justify-content:center}}
 .thub-grid>.pick{grid-column:1/-1;margin:6px 0}.thub-body>.pick-break{margin:34px 0}
+
+
+/* ===================== phone layout (P4, 2026-11-26): up to 600 px only =====================
+   Ideas from the NSBiz App's phone pattern, Infinity's own look: thumb-size taps (44 px), a short hero so the
+   search box and the tools show on the first screen, and each category as a 2-column grid of small tool tiles
+   (the first 4; "See all" opens the whole category). Wider screens are not touched. */
+@media (max-width:600px){
+  .icon-btn,.kbar-btn{width:44px;height:44px;min-width:44px;border-radius:12px}
+  .nav-actions{gap:4px}
+  .nav-actions .pref-src-head{width:44px;height:44px}
+  .nav a{min-height:48px;display:flex;align-items:center}
+  .inf-hero{padding-top:22px;padding-bottom:8px}
+  .inf-hero h1{margin:14px auto 10px;font-size:clamp(28px,8.6vw,36px)}
+  .inf-hero p{font-size:15px;line-height:1.5}
+  .inf-hero .kbar-hero{margin-top:18px}
+  .inf-feats{margin-top:18px;gap:8px}
+  .inf-feats li,.inf-feats a{padding:10px 12px}.inf-feats li:has(a){padding:0}
+  .inf-feats a{min-height:44px}
+  .inf-feats svg{width:18px;height:18px;margin-bottom:4px}
+  .inf-feats b{font-size:14px}
+  .inf-feats span{display:none}
+  .home-sec{margin:22px auto}
+  .thub-chip{height:44px}
+  .thub-more{min-height:44px;padding:0 4px}
+  /* category rows: a 2-column tile grid instead of the sideways swipe */
+  .thub-sec .thub-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;scroll-snap-type:none;padding-bottom:0;gap:10px}
+  .thub-sec .thub-grid>.thub-cell:nth-child(n+5){display:none}
+  .thub-sec .thub-grid>:not(.thub-cell){grid-column:1/-1;min-width:0;max-width:100%}
+  .thub-sec .thub-grid>.thub-cell{min-width:0}
+  .google-auto-placed{max-width:100%}
+  .google-auto-placed>ins.adsbygoogle{width:100%!important;max-width:100%}
+  .thub-sec .thub-cell>.thub-card{flex-direction:column;gap:8px;padding:12px;padding-right:12px;min-height:118px}
+  .thub-sec .thub-ic{width:40px;height:40px;font-size:20px}
+  .thub-sec .thub-card b{font-size:14px;line-height:1.25;padding-right:26px}
+  .thub-sec .thub-card b .thub-new{display:none}
+  .thub-sec .thub-card small{font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .thub-sec .thub-fav{top:2px;right:2px;width:44px;height:44px}
+  .thub-fav{width:44px;height:44px}
+  /* tool pages */
+  .tbtn,.tbtn-sm,.tplaces .tbtn,.tool-app .tbtn{min-height:44px}
+  .tcheck,.tu-copy{min-height:44px}
+  .tbar .tbtn,.tbtn.tbtn-sm,.tool-app .tbtn.tbtn-sm{min-height:44px}
+  .trelated-all a,.post-labels a{display:inline-flex;align-items:center;min-height:44px}
+  .brand{min-height:44px}
+  .section-head a{display:inline-flex;align-items:center;min-height:44px}
+  .crumb a{display:inline-flex;align-items:center;min-height:44px}
+  .site-footer a:not(.si){display:inline-flex;align-items:center;min-height:44px}
+}
+@media (max-width:360px){
+  .nav-actions .pref-src-head{display:none}
+  .thub-sec .thub-grid{gap:8px}
+  .thub-sec .thub-cell>.thub-card{padding:10px}
+}
+/* Home page: no jump when the tool catalogue arrives (P4, 2026-11-26). The catalogue box is empty until kit.js
+   fills it, so everything below it used to sit on the first screen and was then pushed far down. While the box is
+   still empty it keeps one screen of height; the catalogue is much taller, so nothing on screen moves. If loading
+   fails, kit.js writes an error line (.tstatus) and the box returns to its normal height. All screen sizes. */
+html.js .inf-hero~.home-sec [data-gco-tool='hub'] .gco-tool-mount:not(:has(.thub,.tstatus)){min-height:100vh}
+/* Phones up to 429 px: the headline is 3 lines in Geist Mono but 2 in the fallback font shown first, so keep room for 3 lines (no jump when the font arrives) */
+@media (max-width:429px){.inf-hero h1{min-height:3.12em}}
